@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Bot QR</title>
+  </head>
+  <body>
+    <img id="qr-code" src="" alt="QR Code" />
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+      const socket = io();
+      socket.on("qr", (url) => {
+        document.getElementById("qr-code").src = url;
+      });
+    </script>
+  </body>
+</html>
